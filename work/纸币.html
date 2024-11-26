@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>纸币支付方案</title>
+    <link rel="stylesheet" href="纸币.css" />
+  </head>
+  <body>
+    <!-- 有10张纸币，面额分别有1元、2元、5元，现需要支付18元，通过编程统计出有那些支付方法 -->
+      <h1>纸币支付方案</h1>
+      <p class="src">有10张纸币，面额分别有1元、2元、5元，现需要支付18元，通过编程统计出有那些支付方法？</p>
+      <section>
+        <fieldset>
+            <legend>方案：</legend>
+                <p id="result"></p>
+        </fieldset>
+      </section>
+      <script>
+        window.onload = function() {
+            var money = 18;
+            var totle = 10;
+            var result = [];
+            var i = 0;
+            for(var x = 0; x<=totle; x++){
+                for(var y = 0; y<=totle-x; y++){
+                    for(var z = 0; z<=totle-x-y; z++){
+                        if(x*1 + y*2 + z*5 === money)
+                        {
+                          result[i] = i+1 + "、"+ x + " 张1元、" + y + " 张2元、" + z + " 张5元";
+                          i++;
+                        }
+                            
+                    }
+                }
+            }
+            for(var j = 0; j<result.length; j++){
+                document.getElementById("result").innerHTML += result[j] + "<br />";
+            }
+        }
+      </script>
+</html>

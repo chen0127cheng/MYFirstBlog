@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造函数Work</title>
+  </head>
+  <body>
+    <script>
+      //创建构造函数，接受参数，以便调用
+      function Person(firstName, lastName, age, gender, interests) {
+        this.name = firstName + " " + lastName;
+        this.lastName = lastName;
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        //性别判断
+        var sex = this.gender === "male" ? "He" : "She";
+        //兴趣爱好
+        var hobbies = this.interests.join(", ");
+        this.bio = function () {
+          console.log(
+            this.name +
+              " " +
+              " is " +
+              this.age +
+              " ." +
+              sex +
+              " likes" +
+              " " +
+              hobbies +
+              "."
+          );
+        };
+      }
+      //创建实例对象
+      var person1 = new Person("John", "Doe", 30, "male", [
+        "reading",
+        "swimming",
+      ]);
+      var person2 = new Person("Jane", "Doe", 25, "female", [
+        "painting",
+        "hiking",
+      ]);
+      person1.bio();
+      person2.bio();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+body {
+  width: 60%;
+  font-size: 16px;
+  font-family: STXihei, "Microsoft YaHei";
+}
+h1 {
+  margin-left: 50px;
+  font-family: "楷体";
+  font-weight: 700;
+}
+fieldset {
+  border-radius: 20px;
+  border: 5px solid #ccc;
+}
+legend {
+  margin-left: 20px;
+  font-weight: 700;
+}
+#result {
+  text-align: left;
+}
+.src {
+  margin-left: 50px;
+}

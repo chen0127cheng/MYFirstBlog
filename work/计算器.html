@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计算器</title>
+    <style>
+      @font-face {
+        font-family: "也字";
+        src: url("font/也字工厂小石头（建议先保存，再下载）/也字工厂小石头.ttf");
+      }
+      * {
+        font-family: "Rubik", sans-serif;
+      }
+      h1 {
+        font-size: 4.2rem;
+        text-align: center;
+      }
+      .math-calculator {
+        border: 4mm ridge rgba(50, 155, 220, 0.6);
+        display: flex;
+        gap: 2.6rem;
+        padding: 1.6rem;
+        flex-direction: row;
+        margin: 0 230px 230px 230px;
+        height: 200px;
+        min-width: 700px;
+      }
+      .container {
+        width: 100%;
+        border-radius: 110px;
+        box-shadow: 0 0 10px 0 #888;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .calculator {
+        width: 100%;
+      }
+      .title {
+        text-align: center;
+      }
+      .input {
+        border: none;
+        border-bottom: 2px solid #888;
+        align-self: center;
+      }
+      p {
+        border-bottom: 2px solid #888;
+        width: 60%;
+        margin: auto;
+      }
+      .result {
+        text-align: center;
+      }
+      .btn {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin: auto;
+        text-align: center;
+        background-color: rgb(230, 118, 39);
+      }
+      .unit-btn {
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        margin: auto;
+      }
+      .unit-btn button {
+        padding: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>计算器</h1>
+    <div class="math-calculator">
+      <div class="container calculator">
+        <h4 class="title">基本运算</h4>
+        <input id="calculator" type="text" class="input" placeholder="+—*/" />
+        <button id="btn_calculator" class="btn">√</button>
+        <p class="result" id="calculator_result"></p>
+      </div>
+      <div class="container trig">
+        <h4 class="title">三角函数</h4>
+        <input
+          type="text"
+          id="trig"
+          class="input"
+          placeholder="例如：sin(30)"
+        />
+        <button id="btn_trig" class="btn">√</button>
+        <p class="result" id="trig_result"></p>
+      </div>
+      <div class="container unit">
+        <h4 class="title">单位换算</h4>
+        <input type="text" id="unit" class="input" placeholder="例如：1cm" />
+        <div class="unit-btn">
+          <button id="btn_unit_km" class="btn">km</button>
+          <button id="btn_unit_m" class="btn">m</button>
+          <button id="btn_unit_cm" class="btn">cm</button>
+          <button id="btn_unit_dm" class="btn">dm</button>
+          <button id="btn_unit_mm" class="btn">mm</button>
+        </div>
+        <p class="result" id="unit_result"></p>
+      </div>
+    </div>
+    <script src="计算器.js"></script>
+  </body>
+</html>

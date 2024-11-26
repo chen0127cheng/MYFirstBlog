@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>石头 剪刀 布</title>
+    <link rel="stylesheet" href="./猜拳游戏.css" />
+  </head>
+  <body>
+    <h1>让我们玩石头剪刀布吧！</h1>
+    <main>
+      <details class="rules-container">
+        <summary>游戏规则</summary>
+
+        <p>您将与电脑对战。</p>
+        <p>您可以出石头 剪刀 布。</p>
+        <p>首先获得三分则胜利</p>
+
+        <p>以下是在游戏中获得积分的规则：</p>
+        <ul>
+          <li>石头胜过剪刀</li>
+          <li>剪刀胜过布</li>
+          <li>布胜过石头</li>
+        </ul>
+        <p>如果选择了相同选项则不得分。</p>
+      </details>
+
+      <div class="score-container">
+        <strong
+          >玩家分数: <span class="score" id="player-score">0</span></strong
+        >
+        <strong
+          >电脑分数: <span class="score" id="computer-score">0</span></strong
+        >
+      </div>
+
+      <section class="options-container">
+        <h2>请选择您的出拳:</h2>
+        <div class="btn-container">
+          <button id="rock-btn" class="btn">石头</button>
+          <button id="paper-btn" class="btn">布</button>
+          <button id="scissors-btn" class="btn">剪刀</button>
+        </div>
+      </section>
+
+      <div class="results-container">
+        <p id="results-msg"></p>
+        <p id="winner-msg"></p>
+        <button class="btn" id="reset-game-btn">重新开始？</button>
+      </div>
+    </main>
+    <script src="./猜拳游戏.js"></script>
+  </body>
+</html>

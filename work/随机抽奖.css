@@ -1,0 +1,43 @@
+.container {
+  background: linear-gradient(
+    to bottom right,
+    rgb(214, 112, 202),
+    rgb(146, 43, 243)
+  );
+  height: 140px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.number {
+  width: 80px;
+  height: 80px;
+  border: 2px solid yellow;
+  border-radius: 10px;
+  background-color: bisque;
+  color: rgb(141, 5, 5);
+  box-shadow: 4px 4px 4px rgb(146, 43, 243);
+  font-size: 3em;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.control {
+  margin: 20px auto;
+  text-align: center;
+}
+.control button {
+  font-size: 1.4em;
+  line-height: 2em;
+  padding: 0px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border-color: rgb(146, 43, 243);
+}
+.control button:hover {
+  background-color: rgb(146, 43, 243);
+  color: #fff;
+}

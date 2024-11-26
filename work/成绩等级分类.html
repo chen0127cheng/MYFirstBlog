@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>成绩等级分类</title>
+    <script>
+      window.onload = function () {
+        document.getElementById("btn-ok").onclick = function () {
+          var str_input = document.getElementById("txt-score").value;
+          var num_input = Number(str_input);
+          var level = "";
+          if (num_input >= 90 && num_input <= 100) {
+            level = "A";
+          } else if (num_input >= 80 && num_input < 90) {
+            level = "B";
+          } else if (num_input >= 60 && num_input < 80) {
+            level = "C";
+          } else if (num_input >= 0 && num_input < 60) {
+            level = "D";
+          } else {
+            level = "INPUT ERROR";
+          }
+          document.getElementById("p-show").textContent = "等级：" + level;
+          var s = parseFloat(this.style.fontSize);
+          s += 0.1;
+          this.style.fontSize = s + "em";
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <label for="txt-score">请输入分数：</label>
+    <input type="text" name="score" id="txt-score" />
+    <button id="btn-ok" style="font-size: 1em">确定</button>
+    <p id="p-show"></p>
+  </body>
+</html>

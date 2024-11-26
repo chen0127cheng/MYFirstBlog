@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>闰年判断器</title>
+    <link rel="stylesheet" href="闰年判断器.css" />
+    <script>
+      window.onload = function () {
+        document.getElementById("btn").onclick = function () {
+          var year = parseInt(document.getElementById("year").value);
+          if (year >= 0 && year <= 9999) {
+            var res =
+              (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+                ? "是闰年"
+                : "不是闰年";
+            document.getElementById("result").textContent = year + "" + res;
+          } else {
+            document.getElementById("result").textContent =
+              "请输入0-9999之间的年份";
+          }
+        };
+      };
+    </script>
+  </head>
+  <body>
+    <h1>闰年判断器</h1>
+    <fieldset>
+      <legend>请输入一个年份：</legend>
+      <div class="box">
+        <input type="text" id="year" placeholder="请输入0-9999之间的年份" />
+        <button id="btn">确定</button>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>结果</legend>
+      <p id="result"></p>
+    </fieldset>
+  </body>
+</html>

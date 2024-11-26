@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>随机抽奖</title>
+    <link rel="stylesheet" href="随机抽奖.css" />
+    <script>
+      window.onload = function () {
+        document.getElementById("btn-action").onclick = function () {
+          var status = this.getAttribute("d-status");
+          if (status == 0) {
+            this.setAttribute("d-status", "1");
+            this.textContent = "停止抽奖";
+            lottoStart();
+          } else {
+            this.setAttribute("d-status", "0");
+            this.textContent = "开始抽奖";
+            lottoEnd();
+          }
+        };
+      };
+      function lottoStart() {
+        var boxes = document.getElementsByClassName("number");
+        for (var i = 0; i < boxes.length; i++) {
+          (function () {
+            var box = boxes[i];
+            boxes[i].timer = setInterval(function () {
+              randomNumber(box);
+            }, 100);
+          })();
+        }
+      }
+      function lottoEnd() {
+        var boxes = document.getElementsByClassName("number");
+        for (var i = 0; i < boxes.length; i++) {
+          clearInterval(boxes[i].timer);
+        }
+      }
+      function randomNumber(box) {
+        var num = Math.floor(Math.random() * 10);
+        box.innerText = num;
+      }
+    </script>
+  </head>
+  <body>
+    <h2>随机抽奖</h2>
+    <div class="container">
+      <p class="number" id="num1">0</p>
+      <p class="number" id="num2">0</p>
+      <p class="number" id="num3">0</p>
+    </div>
+    <div class="control">
+      <button id="btn-action" d-status="0">开始抽奖</button>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>判断闰年/平年</title>
+    <style type="text/css">
+      * {
+        border: 0px solid;
+        text-align: center;
+        font-family: "微软雅黑";
+      }
+      #b-box {
+        margin-top: 200px;
+        width: 450px;
+        height: 240px;
+        border-color: #ff5500;
+        border-radius: 10px;
+        border-width: 2px;
+        margin-left: 525px;
+      }
+      .ln1,
+      .ln2 {
+        display: inline-block;
+        height: 50px;
+      }
+      .ln1 input {
+        height: 30px;
+        text-align: left;
+        border-color: #ff5500;
+        border-width: 2px;
+        border-radius: 10px;
+      }
+      .ln2 {
+        margin-top: 25px;
+        margin-left: 70px;
+        margin-right: 70px;
+        display: inline-block;
+      }
+      .ln2 input {
+        width: 80px;
+        height: 40px;
+        border-radius: 10px;
+      }
+      .ln2 input:hover {
+        color: aliceblue;
+        background-color: #ff5500;
+        cursor: pointer;
+      }
+      #tt {
+        margin-top: 20px;
+        font-size: 30px;
+        margin-bottom: 30px;
+        color: #464646;
+      }
+    </style>
+    <script type="text/javascript">
+      function estimate() {
+        var year = parseInt(document.getElementById("year-res").value);
+        var res =
+          (year % 4 == 0 && year % 100 != 0) || year % 400 == 0
+            ? "是闰年"
+            : "是平年";
+        document.getElementById("year-res").value = year + res;
+      }
+      function reset() {
+        document.getElementById("year-res").value = "";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="b-box">
+      <div id="tt">
+        <label>判断闰年/平年</label>
+      </div>
+      <div class="ln1"><label>请输入一个年份：</label></div>
+      <div class="ln1"><input type="text" id="year-res" value="" /></div>
+      <br />
+      <!-- 不要忘记onclick -->
+      <div class="ln2">
+        <input type="button" value="判断" onclick="estimate()" />
+      </div>
+      <div class="ln2">
+        <input type="button" value="重置" onclick="reset()" />
+      </div>
+    </div>
+  </body>
+</html>

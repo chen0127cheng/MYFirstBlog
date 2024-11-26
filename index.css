@@ -1,0 +1,470 @@
+@font-face {
+  font-family: SourGummy-Bold;
+  src: url("../font/Sour Gummy/ttf/SourGummy-Bold.ttf");
+}
+@font-face {
+  font-family: ShangguRound;
+  src: url("../font/尚古圆体/ShangguRound/ShangguRound-Regular.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  color: black;
+  box-sizing: border-box;
+  font-family: ShangguRound, SourGummy-Bold, "Microsoft YaHei", sans-serif;
+}
+
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+}
+.headerStart {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #ffc7c7;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+}
+.headerLogo {
+  /* background-color: #f6f6f6; */
+  height: 100%;
+  width: 20%;
+  /* margin-left: 50px; */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.headerLogo .headerLogoSpan {
+  font-size: 20px;
+  font-weight: bold;
+}
+.headerLogo .headerLogoSpan a {
+  text-decoration: none;
+  font-family: sans-serif;
+}
+.headerStart .cue {
+  display: inline-block;
+  align-self: center;
+  width: 50%;
+  text-align: center;
+}
+.headerStart .headerNav {
+  position: absolute;
+  right: 0;
+  width: 30%;
+  /* padding: 10px; */
+  height: 100%;
+}
+.headerStart .headerNav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* align-items: center; */
+  margin: 15px 50px;
+}
+.mainContent {
+  width: 100%;
+  height: 100%;
+  background-color: #f6f6f6;
+  display: grid;
+  grid-template-columns: 15vw 85vw;
+  /* column-gap: 40px; */
+  padding: 50px 0;
+}
+.mainSection.first {
+  width: 100%;
+  height: 100%;
+  border-right: 5px solid #ffe2e2;
+}
+.mainNav {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  justify-content: center;
+  align-items: center;
+}
+.mainNav li {
+  list-style: none;
+
+  width: 100px;
+  height: 50px;
+  border-radius: 10px;
+  border: 5px dashed #ffc7c7;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mainNav li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+.footerEnd {
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #8785a2;
+  gap: 4.5rem;
+  color: #f6f6f6;
+}
+.footerEnd p {
+  font-size: 16px;
+}
+.Email,
+.Copyright,
+.PhoneNumber,
+.ID,
+strong {
+  color: #f6f6f6;
+}
+
+.Home h1 {
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 4rem;
+  margin: 100px 50px 50px 50px;
+}
+.Home p {
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 5rem;
+  margin: 0 50px;
+}
+.HomeNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.HomeNav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  font-size: 40px;
+  font-weight: 500;
+  margin-top: 50px;
+}
+.HomeNav ul a {
+  text-decoration: none;
+}
+.submit {
+  margin-top: 40px;
+  margin-bottom: 20px;
+  width: 30%;
+  padding: 10px;
+  background-color: #ffe2e2;
+  border: none;
+  border-radius: 110px;
+}
+button:hover {
+  font-weight: 700;
+}
+
+.comment {
+  background-color: #f6f6f6;
+  border: none;
+  border-bottom: 2px solid #8785a2;
+  width: 3rem;
+}
+.remark {
+  background-color: #f6f6f6;
+  border: none;
+  border-bottom: 2px solid #8785a2;
+  width: 6rem;
+}
+.dateContent {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
+}
+.dateContent h1 {
+  padding-top: 1.4rem;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+.dateContent p {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 400;
+}
+.dateboard {
+  padding: 1.4rem;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1.6rem;
+}
+.dateboard .smallBoard {
+  width: 249px;
+  height: 249px;
+  background-color: white;
+  box-shadow: 0 0 10px #8785a2;
+  padding: 1.6rem;
+  /* margin: 1.6rem; */
+  overflow: hidden;
+  /* padding-bottom: 0; */
+}
+.dateboard .smallBoard .date {
+  font-size: 1rem;
+  text-align: left;
+  border-bottom: 2px solid #8785a2;
+}
+.dateboard .smallBoard .text {
+  padding: 3rem 0;
+  /* margin: 1.6rem 0; */
+  font-size: 1.6rem;
+}
+.dateboard .smallBoard .cloud {
+  border-top: 2px solid #8785a2;
+  /* margin: 1rem 0; */
+  font-size: 1rem;
+  text-align: right;
+}
+.workContent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 2fr 2fr 1fr;
+  /* justify-content: center; */
+  align-items: center;
+  padding-left: 70px;
+}
+.workContent .tool {
+  display: flex;
+  flex-direction: row;
+  column-gap: 2.6rem;
+  padding-left: 1.6rem;
+  padding-bottom: 1.6rem;
+  padding-left: 70px;
+}
+.workContent .content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 50px;
+  border-bottom: 2px solid #8785a2;
+}
+.workContent p {
+  width: 100px;
+  height: 60px;
+  border-radius: 11px;
+  background-color: #8785a2;
+  color: #f9f7f7;
+  text-align: center;
+  line-height: 55px;
+  font-weight: 700;
+}
+
+.workContent .tool .toolContent {
+  width: 80px;
+  height: 80px;
+  border-radius: 11px;
+  background-color: #dbe2ef;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.workContent .tool .toolContent a {
+  text-decoration: none;
+}
+.workContent .tool .toolContent a:hover {
+  color: #53354a;
+  font-weight: 700;
+}
+.articleContent {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 90% 10%;
+  padding: 50px;
+}
+.articleContent h2 {
+  font-size: 2.4rem;
+  text-align: center;
+  padding-bottom: 50px;
+}
+.articleContent img {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+.articleContent .html,
+.css,
+.js {
+  padding: 1.6rem;
+}
+.articleContent .css .picture {
+  display: flex;
+  flex-direction: row;
+}
+
+.articleContent p {
+  font-size: 2rem;
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+@media screen and (max-width: 1500px) {
+  .articleContent {
+    padding: 30px;
+  }
+  .articleContent h2 {
+    font-size: 2rem;
+    padding-bottom: 50px;
+  }
+  .articleContent img {
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+  }
+  .articleContent .html,
+  .css,
+  .js {
+    padding: 1.6rem;
+  }
+}
+@media screen and (max-width: 1000px) {
+  .articleContent {
+    padding: 10px;
+  }
+  .articleContent h2 {
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+  .articleContent img {
+    width: 170px;
+    height: 259px;
+  }
+  .articleContent .html,
+  .css,
+  .js {
+    padding: 1rem;
+  }
+
+  .articleContent p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .mainNav li {
+    width: 3.2rem;
+    height: 2.2rem;
+  }
+  .mainSection.first {
+    padding: 50px 0;
+  }
+  .mainNav {
+    grid-template-rows: 7vw 7vw 7vw 7vw;
+  }
+  .mainSection.second {
+    height: 100%;
+    width: 100%;
+  }
+  .mainNav li a {
+    font-size: 12px;
+  }
+  .Home h1 {
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .Home p {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+  .HomeNav ul {
+    font-size: 1.2rem;
+  }
+  .submit {
+    width: 4.4rem;
+    padding: 10px;
+    background-color: #ffe2e2;
+    border: none;
+    border-radius: 110px;
+  }
+  .workContent p {
+    width: 3.2rem;
+    height: 2.2rem;
+    line-height: 30px;
+  }
+
+  .workContent .tool .toolContent {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+  .workContent .content {
+    padding: 10px;
+  }
+  .workContent .tool {
+    padding: 0;
+  }
+  .dateContent h1 {
+    line-height: 0;
+    margin: 10px 5px 5px 5px;
+    font-size: 15px;
+  }
+  .dateboard {
+    gap: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  .dateboard .smallBoard {
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 5px #8785a2;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+  .dateboard .smallBoard .date {
+    font-size: 12px;
+    border-bottom: 1px solid #8785a2;
+  }
+  .dateboard .smallBoard .text {
+    padding: 5px 0;
+    font-size: 12px;
+  }
+  .dateboard .smallBoard .cloud {
+    border-top: 1px solid #8785a2;
+    font-size: 10px;
+  }
+  .articleContent h2 {
+    font-size: 1rem;
+    padding-bottom: 20px;
+  }
+  .articleContent img {
+    width: 100px;
+    height: 150px;
+  }
+  .articleContent .html,
+  .css,
+  .js {
+    padding: 1rem;
+  }
+
+  .articleContent p {
+    font-size: 1rem;
+  }
+}
