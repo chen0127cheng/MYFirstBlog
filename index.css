@@ -9,7 +9,7 @@
 * {
   margin: 0;
   padding: 0;
-  color: black;
+  color: #3f72af;
   box-sizing: border-box;
   font-family: ShangguRound, SourGummy-Bold, "Microsoft YaHei", sans-serif;
 }
@@ -19,14 +19,16 @@ body {
   height: 100vh;
   width: 100vw;
   margin: 0;
+  background-color: #f9f7f7;
 }
+
 .headerStart {
   width: 100%;
   height: 50px;
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #ffc7c7;
+  background-color: #cdd8eb;
   z-index: 1;
   display: flex;
   flex-direction: row;
@@ -44,6 +46,7 @@ body {
 .headerLogo .headerLogoSpan {
   font-size: 20px;
   font-weight: bold;
+  color: #112d4e;
 }
 .headerLogo .headerLogoSpan a {
   text-decoration: none;
@@ -54,6 +57,7 @@ body {
   align-self: center;
   width: 50%;
   text-align: center;
+  color: #112d4e;
 }
 .headerStart .headerNav {
   position: absolute;
@@ -72,33 +76,41 @@ body {
 }
 .mainContent {
   width: 100%;
-  height: 100%;
-  background-color: #f6f6f6;
-  display: grid;
-  grid-template-columns: 15vw 85vw;
-  /* column-gap: 40px; */
-  padding: 50px 0;
+  background: radial-gradient(circle, #dde3ee 5%, rgba(255, 255, 255, 1) 100%);
+
+  display: flex;
 }
 .mainSection.first {
-  width: 100%;
-  height: 100%;
-  border-right: 5px solid #ffe2e2;
+  position: fixed;
+  width: 15vw;
+  height: 100vh;
+  background-attachment: fixed;
+  border-right: 5px solid #dbe2ef;
+  z-index: 0;
+}
+.mainSection.second {
+  margin-left: 15vw;
+  width: 85vw;
+  height: 100vh;
+  overflow-y: scroll;
+  padding: 50px;
+  /* margin-bottom: 100px; */
 }
 .mainNav {
-  height: 100%;
+  height: 80vh;
   width: 100%;
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
+  margin: 50px 0;
 }
 .mainNav li {
   list-style: none;
-
+  border: 5px dashed #dbe2ef;
   width: 100px;
   height: 50px;
   border-radius: 10px;
-  border: 5px dashed #ffc7c7;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,6 +119,7 @@ body {
   text-decoration: none;
   font-size: 18px;
   font-weight: bold;
+  color: #112d4e;
 }
 .footerEnd {
   width: 100%;
@@ -117,9 +130,25 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: #8785a2;
+  background-color: #112d4e;
   gap: 4.5rem;
-  color: #f6f6f6;
+  color: #f9f7f7;
+}
+.footerEnd img {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  animation: gif 20s linear infinite;
+}
+@keyframes gif {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 10vw;
+  }
 }
 .footerEnd p {
   font-size: 16px;
@@ -133,16 +162,92 @@ strong {
 }
 
 .Home h1 {
-  font-size: 70px;
+  font-size: 3.2rem;
   font-weight: bold;
   line-height: 4rem;
-  margin: 100px 50px 50px 50px;
+  margin: 40px 0 0px 50px;
 }
 .Home p {
-  font-size: 40px;
+  font-size: 1.2rem;
   font-weight: 500;
+}
+.Home .me {
   line-height: 5rem;
   margin: 0 50px;
+}
+.Home .title {
+  text-align: center;
+  margin-bottom: 30px;
+  border-top: #112d4e 2px solid;
+  border-bottom: #112d4e 2px solid;
+}
+.Home .hobby {
+  margin: 20px 230px 20px 230px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Home .hobby .hobbyContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  align-items: center;
+  margin: 20px 5px;
+}
+.Home .hobby .hobbyContent img {
+  /* width: 100px; */
+  height: 70px;
+  border-radius: 11px;
+}
+.Home .ctf {
+  margin: 20px 200px 20px 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.6rem;
+}
+.Home .ctf .ctfContent {
+  position: relative;
+}
+.Home .ctf .ctfContent img {
+  width: 100%;
+}
+.Home .ctf .ctfContent p {
+  width: 100%;
+  height: 50px;
+  background-color: #cdd8eb;
+  opacity: 0.8;
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  padding: 10px 0;
+  display: none;
+}
+.Home .ctf .ctfContent:hover p {
+  display: block;
+}
+.Home .last {
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 0 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.Home .last .netWork {
+  align-items: center;
+}
+.Home .last .netWork img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+#textEmail {
+  height: 30px;
+}
+#submit {
+  height: 30px;
+  width: 30px;
+  background-color: #18314e;
 }
 .HomeNav {
   display: flex;
@@ -164,17 +269,19 @@ strong {
 .HomeNav ul a {
   text-decoration: none;
 }
-.submit {
+/* .submit {
   margin-top: 40px;
   margin-bottom: 20px;
   width: 30%;
   padding: 10px;
-  background-color: #ffe2e2;
+  background-color: #dbe2ef;
   border: none;
   border-radius: 110px;
-}
+} */
+
 button:hover {
   font-weight: 700;
+  background-color: #3f72af;
 }
 
 .comment {
@@ -184,9 +291,9 @@ button:hover {
   width: 3rem;
 }
 .remark {
-  background-color: #f6f6f6;
+  background-color: #f9f7f7;
   border: none;
-  border-bottom: 2px solid #8785a2;
+  border-bottom: 2px solid #dbe2ef;
   width: 6rem;
 }
 .dateContent {
@@ -201,11 +308,13 @@ button:hover {
   text-align: center;
   font-size: 40px;
   font-weight: bold;
+  color: #112d4e;
 }
 .dateContent p {
   text-align: center;
   font-size: 40px;
   font-weight: 400;
+  color: #3f72af;
 }
 .dateboard {
   padding: 1.4rem;
@@ -219,8 +328,8 @@ button:hover {
 .dateboard .smallBoard {
   width: 249px;
   height: 249px;
-  background-color: white;
-  box-shadow: 0 0 10px #8785a2;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px #dbe2ef;
   padding: 1.6rem;
   /* margin: 1.6rem; */
   overflow: hidden;
@@ -229,15 +338,16 @@ button:hover {
 .dateboard .smallBoard .date {
   font-size: 1rem;
   text-align: left;
-  border-bottom: 2px solid #8785a2;
+  border-bottom: 2px solid #112d4e;
 }
 .dateboard .smallBoard .text {
   padding: 3rem 0;
   /* margin: 1.6rem 0; */
   font-size: 1.6rem;
+  color: #3f72af;
 }
 .dateboard .smallBoard .cloud {
-  border-top: 2px solid #8785a2;
+  border-top: 2px solid #112d4e;
   /* margin: 1rem 0; */
   font-size: 1rem;
   text-align: right;
@@ -266,13 +376,13 @@ button:hover {
   flex-direction: column;
   justify-content: space-between;
   padding-top: 50px;
-  border-bottom: 2px solid #8785a2;
+  border-bottom: 2px solid #18314e;
 }
 .workContent p {
   width: 100px;
   height: 60px;
   border-radius: 11px;
-  background-color: #8785a2;
+  background-color: #18314e;
   color: #f9f7f7;
   text-align: center;
   line-height: 55px;
@@ -307,10 +417,11 @@ button:hover {
   font-size: 2.4rem;
   text-align: center;
   padding-bottom: 50px;
+  color: #112d4e;
 }
 .articleContent img {
-  width: 300px;
-  height: 400px;
+  width: 200px;
+  height: 300px;
   overflow: hidden;
 }
 .articleContent .html,
@@ -327,6 +438,7 @@ button:hover {
   font-size: 2rem;
   grid-row: 2/3;
   grid-column: 1/3;
+  color: #3f72af;
 }
 @media screen and (max-width: 1500px) {
   .articleContent {
@@ -387,13 +499,17 @@ button:hover {
   .mainNav li a {
     font-size: 12px;
   }
+
   .Home h1 {
     font-size: 1.2rem;
     margin: 0;
   }
+  .Home .me {
+    line-height: 1px;
+    margin: 0;
+  }
   .Home p {
-    font-size: 1.2rem;
-    line-height: 1.5rem;
+    font-size: 10px;
   }
   .HomeNav ul {
     font-size: 1.2rem;
@@ -466,6 +582,16 @@ button:hover {
 
   .articleContent p {
     font-size: 1rem;
+  }
+  .Home .hobby {
+    margin: 10px;
+  }
+  .Home .hobby .hobbyContent {
+    margin: 0;
+    gap: 0;
+  }
+  .Home .hobby .hobbyContent img {
+    height: 30px;
   }
 }
 .articleContent {
